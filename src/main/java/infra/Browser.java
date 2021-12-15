@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 
 import java.io.File;
-
+//מחלקה מסוג סינגלטון שמאתחלת ומחזירה את הדרייבר
 public class Browser {
 
     private static WebDriver _driver;

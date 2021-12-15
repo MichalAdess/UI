@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-
+//מחלקה אבא של כל הרכיבים ותפקידה לספק פונקציונליות משותפת לכלל האוביקטים כמו חיפוש או בדיקה של טקסט
 public class BaseWE {
 
     private String description;
@@ -14,13 +14,18 @@ public class BaseWE {
     private WebElement we;
     protected int action = 0;
 
+    public String getDescription() {
+        return description;
+    }
+
+    //constructor - init fields
     public BaseWE(String description, LocateBy selectBy, String selector) {
         this.description = description;
         this.selectBy = selectBy;
         this.selector = selector;
     }
 
-
+    //find the element and return WEbElement
     protected WebElement findElement() {
 
         try {
@@ -35,6 +40,7 @@ public class BaseWE {
         return we;
     }
 
+    //convert the given string by to By object
     private By by() {
         By by = null;
         switch (selectBy) {
@@ -58,11 +64,7 @@ public class BaseWE {
         return by;
     }
 
-    protected int count() {
-        return Browser.driver().findElements(this.by()).size();
-
-    }
-
+    //validate Web element text according expected
     public void validateText(String exp) {
         String text = this.findElement().getText();
         boolean equals = text.equals(exp);
@@ -83,8 +85,9 @@ public class BaseWE {
         this.selector = selector;
     }
 
+    //return WebElement, in case of null find it
     public WebElement getWe() {
-        if(we==null){
+        if (we == null) {
             this.findElement();
         }
         return we;

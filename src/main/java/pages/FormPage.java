@@ -1,12 +1,12 @@
 package pages;
 
 import infra.ui.*;
-
+//מחלקה שמתארת את הטופס מכילה את השדות ואת הפונקציונליות הנדרשת לצורך בדיקת הודעות השגיאה
 public class FormPage {
 
     private InputWe email = new InputWe("email", BaseWE.LocateBy.CSS, "[data-testid='Email']");
     private InputWe cellphone = new InputWe("email", BaseWE.LocateBy.CSS, "[data-testid='cellphone']");
-    private SimpleWE errValidation = new SimpleWE("err message", BaseWE.LocateBy.CSS, "[id='error-message-x']");
+    private SimpleWE errValidation = new SimpleWE("err message", BaseWE.LocateBy.ID, "error-message-x");
     private ListBoxWE city = new ListBoxWE("city", BaseWE.LocateBy.CSS, "[data-testid='City']");
     private ButtonWE nextButton = new ButtonWE("nextButton", BaseWE.LocateBy.CSS, "[data-testid='nextButton']");
 

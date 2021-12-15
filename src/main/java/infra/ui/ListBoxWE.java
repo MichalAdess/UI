@@ -1,7 +1,6 @@
 package infra.ui;
 
-import infra.ui.BaseWE;
-
+//רכיב מסוג רשימה
 public class ListBoxWE extends BaseWE {
 
     public ListBoxWE(String description, LocateBy selectBy, String selector) {
